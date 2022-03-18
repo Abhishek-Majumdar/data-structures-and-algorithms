@@ -1,4 +1,4 @@
-package main.com.leetcode.dsa.arrays;
+package main.com.interviews.enphase;
 
 import java.util.HashMap;
 import java.util.Map;
