@@ -1,8 +1,9 @@
 package main.com.leetcode.dsa.algorithm;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class Recursion {
 
@@ -74,6 +75,20 @@ public class Recursion {
         return nthFibonacciNumber;
     }
 
+    public void recursiveReverse(char[] stringToReverse, int i){
+        int n = stringToReverse.length;
+        if (i == n / 2)
+            return;
+        swap(stringToReverse,i,n - i - 1);
+        recursiveReverse(stringToReverse, i + 1);
+    }
+
+    public void swap(char []arr, int i, int j){
+        char temp= arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }
+
     public static void main(String[] args) {
         Recursion obj = new Recursion();
 
@@ -83,6 +98,11 @@ public class Recursion {
         System.out.println(obj.nthFibonacciNumberIterativeUsingList(11));
         System.out.println(obj.nthFibonacciNumberIterative(11));
         System.out.println(obj.nthFibonacciNumber(11));
+
+        char[] toReverse = "Reverse this string".toCharArray();
+        char[] toReverse2 = "aabbcbbaa".toCharArray();
+        obj.recursiveReverse(toReverse2, 0);
+        System.out.println(toReverse2);
     }
 
 }
