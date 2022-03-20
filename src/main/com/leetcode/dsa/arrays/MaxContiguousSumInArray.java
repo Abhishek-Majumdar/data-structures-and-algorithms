@@ -1,6 +1,5 @@
 package main.com.leetcode.dsa.arrays;
 
-//Referred to algorithm; couldn't solve by myself
 public class MaxContiguousSumInArray {
 
     /**
