@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-//Solved without hints - Optimal solution O(n)
 public class TwoSum {
 
     public int[] twoSum(int[] nums, int target) {
