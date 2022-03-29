@@ -7,6 +7,8 @@ import java.util.Queue;
 
 public class Recursion {
 
+    int calculations = 0;
+
     public long computeFactorial(long num){
         long factorial;
         if(num == 1){
@@ -27,6 +29,7 @@ public class Recursion {
     }
 
     public int nthFibonacciNumber(int num){
+        this.calculations += 1;
         int nthFibonacciNumber = 0;
         if(num == 0)
             return 0;
@@ -92,17 +95,19 @@ public class Recursion {
     public static void main(String[] args) {
         Recursion obj = new Recursion();
 
-        System.out.println(obj.computeFactorial(10));
+       /* System.out.println(obj.computeFactorial(10));
         System.out.println(obj.computeFactorialIterative(10));
 
         System.out.println(obj.nthFibonacciNumberIterativeUsingList(11));
-        System.out.println(obj.nthFibonacciNumberIterative(11));
-        System.out.println(obj.nthFibonacciNumber(11));
+        System.out.println(obj.nthFibonacciNumberIterative(11));*/
+        System.out.println(obj.nthFibonacciNumber(5));
+        System.out.println(obj.calculations);
 
-        char[] toReverse = "Reverse this string".toCharArray();
+
+        /*char[] toReverse = "Reverse this string".toCharArray();
         char[] toReverse2 = "aabbcbbaa".toCharArray();
         obj.recursiveReverse(toReverse2, 0);
-        System.out.println(toReverse2);
+        System.out.println(toReverse2);*/
     }
 
 }

@@ -118,7 +118,7 @@ public class BinarySearchTree {
         Node currentNode = this.root;
         searchQueue.add(currentNode);
 
-        while(searchQueue.size() > 0){
+        while( ! searchQueue.isEmpty()){
             currentNode = searchQueue.remove(0);
             seenData.add(currentNode.data);
             if(currentNode.left != null)
@@ -200,6 +200,7 @@ public class BinarySearchTree {
         return this.depthFirstSearchPostOrder(this.root, new ArrayList<>());
     }
 
+    //TODO
     public boolean validateBinarySearchTree(){
         boolean result = false;
 

@@ -10,7 +10,7 @@ public class LongestWordInASentence {
      * @param sen
      * @return
      */
-    public String LongestWord(String sen) {
+    public String longestWord(String sen) {
         String[] listOfWords;
         String largestWord = "";
         String cleanedSen = sen.replaceAll("[^\\w\\s]","");
@@ -26,7 +26,7 @@ public class LongestWordInASentence {
     public static void main(String[] args) {
         LongestWordInASentence obj = new LongestWordInASentence();
         String sen = "I love dogs avery much";
-        System.out.println(obj.LongestWord(sen));
+        System.out.println(obj.longestWord(sen));
     }
 
 }

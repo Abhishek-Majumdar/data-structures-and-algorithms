@@ -51,6 +51,7 @@ public class Graph {
             visitedNodes.add(currentNode);
             seenData.add(currentNode.data);
 
+            //Useless check, Adjacency list for any node cannot be null or empty in a perfectly formed graph
             if(this.adjacentList.get(currentNode) != null && !this.adjacentList.get(currentNode).isEmpty())
                 for(Node connNode : this.adjacentList.get(currentNode)){
                     if(! searchQueue.contains(connNode) && ! visitedNodes.contains(connNode))
@@ -67,6 +68,8 @@ public class Graph {
 
         visitedNodes.add(node);
         seenList.add(node.data);
+
+        //Useless check, Adjacency list for any node cannot be null or empty in a perfectly formed graph
         if(this.adjacentList.get(node) != null && ! this.adjacentList.get(node).isEmpty()){
             this.adjacentList.get(node).stream().filter(tmpNode -> !visitedNodes.contains(tmpNode))
                     .forEach(fltrTmpNode -> depthFirstSearchPreOrder(fltrTmpNode, seenList, visitedNodes));
