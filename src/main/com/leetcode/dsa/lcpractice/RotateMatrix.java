@@ -28,6 +28,14 @@ public class RotateMatrix {
         return matrix;
     }
 
+
+    /**
+     * Rotates a given matrix by 180 degrees
+     * anti-clockwise
+     *
+     * @param arrToRotate matrix(2-D array) to rotate
+     * @return copy of rotated matrix
+     */
     public int[][] rotatedMatrix(int[][] arrToRotate){
         if(arrToRotate.length == 0)
             return arrToRotate;
