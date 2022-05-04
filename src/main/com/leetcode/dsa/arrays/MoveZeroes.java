@@ -2,6 +2,7 @@ package main.com.leetcode.dsa.arrays;
 
 import java.util.Arrays;
 
+//https://leetcode.com/problems/move-zeroes/
 public class MoveZeroes {
 
     public void shiftArrayToLeft(int[] nums, int index){
@@ -24,7 +25,6 @@ public class MoveZeroes {
      * @param nums
      */
     public void moveZeroes(int[] nums) {
-        int numsLimit = nums.length;
         /*int tmpForSwap;
 
         for(int i=0; i<numsLimit; i++){

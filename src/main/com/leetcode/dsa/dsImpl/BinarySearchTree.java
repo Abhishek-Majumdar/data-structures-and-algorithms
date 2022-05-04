@@ -1,9 +1,6 @@
 package main.com.leetcode.dsa.dsImpl;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 import java.util.Queue;
 
 public class BinarySearchTree {
@@ -114,12 +111,13 @@ public class BinarySearchTree {
             return null;
 
         List<Integer> seenData = new ArrayList<>();
-        List<Node> searchQueue = new ArrayList<>();
+        //List<Node> searchQueue = new ArrayList<>();
+        Queue<Node> searchQueue = new ArrayDeque<>();
         Node currentNode = this.root;
         searchQueue.add(currentNode);
 
         while( ! searchQueue.isEmpty()){
-            currentNode = searchQueue.remove(0);
+            currentNode = searchQueue.poll();
             seenData.add(currentNode.data);
             if(currentNode.left != null)
                 searchQueue.add(currentNode.left);
@@ -221,6 +219,6 @@ public class BinarySearchTree {
         /*System.out.println(bst);
         System.out.println(bst.contains(20) != null);*/
 
-        System.out.println(bst.depthFirstSearchPostOrder());
+        System.out.println(bst.breadthFirstSearch());
     }
 }

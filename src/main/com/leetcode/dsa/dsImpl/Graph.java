@@ -51,12 +51,10 @@ public class Graph {
             visitedNodes.add(currentNode);
             seenData.add(currentNode.data);
 
-            //Useless check, Adjacency list for any node cannot be null or empty in a perfectly formed graph
-            if(this.adjacentList.get(currentNode) != null && !this.adjacentList.get(currentNode).isEmpty())
-                for(Node connNode : this.adjacentList.get(currentNode)){
-                    if(! searchQueue.contains(connNode) && ! visitedNodes.contains(connNode))
-                        searchQueue.add(connNode);
-                }
+            for(Node connNode : this.adjacentList.get(currentNode)){
+                if(! searchQueue.contains(connNode) && ! visitedNodes.contains(connNode))
+                    searchQueue.add(connNode);
+            }
         }
 
         return seenData;
@@ -65,15 +63,11 @@ public class Graph {
     private List<Integer> depthFirstSearchPreOrder(Node node, List<Integer> seenList, Set<Node> visitedNodes){
         if(node == null)
             return Collections.emptyList();
-
         visitedNodes.add(node);
         seenList.add(node.data);
 
-        //Useless check, Adjacency list for any node cannot be null or empty in a perfectly formed graph
-        if(this.adjacentList.get(node) != null && ! this.adjacentList.get(node).isEmpty()){
-            this.adjacentList.get(node).stream().filter(tmpNode -> !visitedNodes.contains(tmpNode))
-                    .forEach(fltrTmpNode -> depthFirstSearchPreOrder(fltrTmpNode, seenList, visitedNodes));
-        }
+        this.adjacentList.get(node).stream().filter(tmpNode -> !visitedNodes.contains(tmpNode))
+                .forEach(fltrTmpNode -> depthFirstSearchPreOrder(fltrTmpNode, seenList, visitedNodes));
 
         return seenList;
     }
@@ -87,10 +81,8 @@ public class Graph {
             return Collections.emptyList();
 
         visitedNodes.add(node);
-        if(this.adjacentList.get(node) != null && ! this.adjacentList.get(node).isEmpty()){
-            this.adjacentList.get(node).stream().filter(tmpNode -> !visitedNodes.contains(tmpNode))
-                    .forEach(fltrTmpNode -> depthFirstSearchPostOrder(fltrTmpNode, seenList, visitedNodes));
-        }
+        this.adjacentList.get(node).stream().filter(tmpNode -> !visitedNodes.contains(tmpNode))
+                .forEach(fltrTmpNode -> depthFirstSearchPostOrder(fltrTmpNode, seenList, visitedNodes));
         seenList.add(node.data);
 
         return seenList;
