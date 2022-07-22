@@ -1,8 +1,8 @@
 # Data Structures and Algorithms
 
-This is a JAVA repository containing solutions, documentations 
+This repositorycontains solutions, documentations 
 to some of the most popular DSA question asked in interviews, coding tests
-and competitions.
+and competitions (written in JAVA).
 
 ## Clone link
 >git clone https://github.com/Abhishek-Majumdar/data-structures-and-algorithms.git
